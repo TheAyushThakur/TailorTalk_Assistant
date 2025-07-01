@@ -35,9 +35,9 @@ llm = ChatOpenAI(
     openai_api_key=openrouter_key,
     model_kwargs={
         "headers":{
-        "HTTP-Referer": "https://tailortalkassistant.streamlit.app/",
-        "X-Title": "TailorTalk Assistant"
-    }
+            "HTTP-Referer": "https://tailortalkassistant.streamlit.app/",
+            "X-Title": "TailorTalk Assistant"
+        }
     }
 )
 
