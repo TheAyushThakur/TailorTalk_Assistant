@@ -5,6 +5,8 @@ google-auth
 google-auth-httplib2
 google-auth-oauthlib
 langchain
+langchain-community
+requests
 openai
 streamlit
 python-dotenv
