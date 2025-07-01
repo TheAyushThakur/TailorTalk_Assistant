@@ -15,6 +15,8 @@ load_dotenv()
 
 # Get API key with fallback
 openrouter_key = os.getenv("OPENROUTER_API_KEY") or st.secrets.get("OPENROUTER_API_KEY")
+print("OPENROUTER KEY:", openrouter_key)
+
 
 def ensure_utc(time_str: str) -> str:
     """Convert any time string to UTC ISO format"""
