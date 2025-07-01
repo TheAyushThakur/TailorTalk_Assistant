@@ -81,7 +81,8 @@ agent = initialize_agent(
     agent=AgentType.STRUCTURED_CHAT_ZERO_SHOT_REACT_DESCRIPTION,
     verbose=True,
     handle_parsing_errors=True,
-    max_iterations=3,
+    max_iterations=6,  
+    max_execution_time=60, 
     agent_kwargs={
         "system_message": f"""You are TailorTalk Assistant. Today is {today} (IST).
         Key rules:
