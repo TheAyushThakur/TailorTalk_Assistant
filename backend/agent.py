@@ -2,7 +2,7 @@ import os
 import requests
 from langchain.agents import initialize_agent, Tool
 from langchain.agents.agent_types import AgentType
-from langchain_community.chat_models import ChatOpenAI 
+from langchain_openai import ChatOpenAI
 from langchain.tools import tool
 from dotenv import load_dotenv
 from datetime import datetime
