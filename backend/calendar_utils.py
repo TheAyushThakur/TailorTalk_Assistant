@@ -6,6 +6,9 @@ import os
 import json
 import base64
 from google.oauth2 import service_account
+from dotenv import load_dotenv
+
+load_dotenv()
 
 CALENDAR_ID = 'ayushthakur6005@gmail.com'  
 SCOPES = ['https://www.googleapis.com/auth/calendar']
