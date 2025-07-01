@@ -8,8 +8,10 @@ from dotenv import load_dotenv
 from datetime import datetime
 from dateutil import parser
 import pytz
+import streamlit as st
 
-load_dotenv()
+openrouter_key = os.getenv("OPENROUTER_API_KEY") or st.secrets.get("OPENROUTER_API_KEY")
+
 def ensure_utc(time_str: str) -> str:
     try:
         dt = parser.parse(time_str, fuzzy=True)
@@ -29,7 +31,7 @@ llm = ChatOpenAI(
     temperature=0.2,
     model_name="meta-llama/llama-3-70b-instruct",
     openai_api_base="https://openrouter.ai/api/v1",
-    openai_api_key=os.getenv("OPENROUTER_API_KEY")
+    openai_api_key=openrouter_key
 )
 # Backend API URL
 BASE_URL = "http://localhost:8000"
