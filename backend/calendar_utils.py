@@ -58,5 +58,6 @@ def book_appointment(summary: str, start_time: str, end_time: str, description="
     event = service.events().insert(calendarId=CALENDAR_ID, body=event).execute()
     return event
 
+print("✅ Decoding successful. Service account loaded.")
 
 
