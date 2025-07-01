@@ -1,6 +1,10 @@
 import streamlit as st
 import sys
+
 import os
+
+os.environ["OPENROUTER_API_KEY"] = st.secrets["OPENROUTER_API_KEY"]
+BASE_URL = st.secrets["BACKEND_URL"]
 
 ########## Adding project root to sys.path so "backend" is importable ##########
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
