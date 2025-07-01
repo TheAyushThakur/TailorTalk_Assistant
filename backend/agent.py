@@ -33,8 +33,11 @@ llm = ChatOpenAI(
     openai_api_base="https://openrouter.ai/api/v1",
     openai_api_key=openrouter_key
 )
+print("✅ LLM Base URL:", llm.openai_api_base)
+print("✅ API Key Present:", bool(os.getenv("OPENROUTER_API_KEY")))
+
 # Backend API URL
-BASE_URL = "http://localhost:8000"
+BASE_URL = "https://web-production-0006.up.railway.app/"
 
 # Tool to check availability
 @tool
