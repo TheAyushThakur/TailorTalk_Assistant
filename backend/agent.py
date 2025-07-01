@@ -33,12 +33,6 @@ llm = ChatOpenAI(
     model_name="meta-llama/llama-3-70b-instruct",
     openai_api_base="https://openrouter.ai/api/v1",
     openai_api_key=openrouter_key,
-    model_kwargs={
-        "headers":{
-            "HTTP-Referer": "https://tailortalkassistant.streamlit.app/",
-            "X-Title": "TailorTalk Assistant"
-        }
-    }
 )
 
 # Backend API URL
