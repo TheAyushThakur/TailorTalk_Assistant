@@ -2,14 +2,28 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from datetime import datetime, timedelta
 import pytz
+import os
+import json
+import base64
+from google.oauth2 import service_account
 
-SCOPES = ['https://www.googleapis.com/auth/calendar']
-SERVICE_ACCOUNT_FILE = 'backend/service_account.json'  
 CALENDAR_ID = 'ayushthakur6005@gmail.com'  
+SCOPES = ['https://www.googleapis.com/auth/calendar']
+# Load base64-encoded credentials from env variable
+base64_creds = os.getenv("GOOGLE_CREDENTIALS_BASE64")
 
-credentials = service_account.Credentials.from_service_account_file(
-    SERVICE_ACCOUNT_FILE, scopes=SCOPES
+if not base64_creds:
+    raise ValueError("GOOGLE_CREDENTIALS_BASE64 not found in environment!")
+
+# Decode and parse the credentials
+decoded_bytes = base64.b64decode(base64_creds)
+service_account_info = json.loads(decoded_bytes)
+
+# Build credentials from dict
+credentials = service_account.Credentials.from_service_account_info(
+    service_account_info, scopes=SCOPES
 )
+
 
 service = build('calendar', 'v3', credentials=credentials)
 
