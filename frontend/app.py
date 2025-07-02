@@ -5,10 +5,9 @@ import os
 
 if "OPENROUTER_API_KEY" in st.secrets:
     os.environ["OPENROUTER_API_KEY"] = st.secrets["OPENROUTER_API_KEY"]
-    os.environ["OPENROUTER_HTTP_REFERER"] = st.secrets["OPENROUTER_HTTP_REFERER"]
-    os.environ["OPENROUTER_X_TITLE"] = st.secrets["OPENROUTER_X_TITLE"]
+    os.environ["GOOGLE_CREDENTIALS_BASE64"] = st.secrets["GOOGLE_CREDENTIALS_BASE64"]
     os.environ["BACKEND_URL"] = st.secrets["BACKEND_URL"]
-    
+
 st.write("✅ OPENROUTER_API_KEY loaded:", "OPENROUTER_API_KEY" in st.secrets)
 
 
