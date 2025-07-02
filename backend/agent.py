@@ -8,20 +8,17 @@ from datetime import datetime
 from dateutil import parser
 import pytz
 import streamlit as st
-from langchain_openai import ChatOpenAI
 
 # Load environment
 load_dotenv()
 
 # Get API key
-openrouter_key = os.getenv("OPENROUTER_API_KEY") or st.secrets.get("OPENROUTER_API_KEY")
-print("OPENROUTER KEY:", openrouter_key)
-
-llm = ChatOpenAI(
-    temperature=0.2,
-    model_name="meta-llama/llama-3-70b-instruct",
-    openai_api_base="https://openrouter.ai/api/v1",
-    openai_api_key=openrouter_key,
+from langchain_groq import ChatGroq
+groq_key = os.getenv("GROQ_API_KEY")
+llm = ChatGroq(
+    groq_api_key=groq_key,
+    model_name="llama3-70b-8192",  
+    temperature=0.2
 )
 
 # Backend API URL
