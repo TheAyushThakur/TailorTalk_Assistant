@@ -31,7 +31,8 @@ def ensure_utc(time_str: str) -> str:
         raise ValueError(f"Invalid time format: {time_str}. Use formats like '3pm tomorrow' or '2025-07-04 15:00'") from e
 
 # Initialize LLM with proper headers
-from langchain_community.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
+
 llm = ChatOpenAI(
     temperature=0.2,
     model_name="meta-llama/llama-3-70b-instruct",
