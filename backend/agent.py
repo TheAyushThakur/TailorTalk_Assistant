@@ -2,7 +2,6 @@ import os
 import requests
 from langchain.agents import initialize_agent, Tool
 from langchain.agents.agent_types import AgentType
-from langchain_openai import ChatOpenAI
 from langchain.tools import tool
 from dotenv import load_dotenv
 from datetime import datetime
@@ -16,6 +15,8 @@ load_dotenv()
 # Get API key with fallback
 openrouter_key = os.getenv("OPENROUTER_API_KEY") or st.secrets.get("OPENROUTER_API_KEY")
 print("OPENROUTER KEY:", openrouter_key)
+referer = os.getenv("OPENROUTER_HTTP_REFERER")
+x_title = os.getenv("OPENROUTER_X_TITLE")
 
 
 def ensure_utc(time_str: str) -> str:
@@ -30,11 +31,16 @@ def ensure_utc(time_str: str) -> str:
         raise ValueError(f"Invalid time format: {time_str}. Use formats like '3pm tomorrow' or '2025-07-04 15:00'") from e
 
 # Initialize LLM with proper headers
+from langchain_community.chat_models import ChatOpenAI
 llm = ChatOpenAI(
     temperature=0.2,
     model_name="meta-llama/llama-3-70b-instruct",
     openai_api_base="https://openrouter.ai/api/v1",
     openai_api_key=openrouter_key,
+    headers={
+        "HTTP-Referer": referer,
+        "X-Title": x_title
+    }
 )
 
 # Backend API URL
