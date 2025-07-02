@@ -6,7 +6,7 @@ google-auth-httplib2
 google-auth-oauthlib
 langchain
 langchain-community
-langchain-groq== 0.3.4
+langchain-groq== 0.3.5
 requests
 openai
 streamlit
