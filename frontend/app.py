@@ -8,6 +8,7 @@ if "OPENROUTER_API_KEY" in st.secrets:
     os.environ["OPENROUTER_HTTP_REFERER"] = st.secrets["OPENROUTER_HTTP_REFERER"]
     os.environ["OPENROUTER_X_TITLE"] = st.secrets["OPENROUTER_X_TITLE"]
     os.environ["BACKEND_URL"] = st.secrets["BACKEND_URL"]
+    
 st.write("✅ OPENROUTER_API_KEY loaded:", "OPENROUTER_API_KEY" in st.secrets)
 
 
