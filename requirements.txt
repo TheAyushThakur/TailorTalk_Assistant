@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+google-api-python-client
+google-auth
+google-auth-httplib2
+google-auth-oauthlib
+langchain
+langchain-community
+langchain-groq== 0.3.4
+requests
+openai
+streamlit
+python-dotenv

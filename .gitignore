@@ -1,0 +1,13 @@
+
+```bash
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+.DS_Store
+.env
+backend/service_account.json
+.streamlit/secrets.toml
