@@ -12,7 +12,7 @@ load_dotenv()
 
 CALENDAR_ID = 'ayushthakur6005@gmail.com'  
 SCOPES = ['https://www.googleapis.com/auth/calendar']
-# Load base64-encoded credentials from env variable
+
 base64_creds = os.getenv("GOOGLE_CREDENTIALS_BASE64")
 
 if not base64_creds:
@@ -61,6 +61,6 @@ def book_appointment(summary: str, start_time: str, end_time: str, description="
     event = service.events().insert(calendarId=CALENDAR_ID, body=event).execute()
     return event
 
-print("✅ Decoding successful. Service account loaded.")
+print("Decoding successful. Service account loaded.")
 
 
