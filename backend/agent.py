@@ -38,9 +38,11 @@ llm = ChatOpenAI(
     model_name="meta-llama/llama-3-70b-instruct",
     openai_api_base="https://openrouter.ai/api/v1",
     openai_api_key=openrouter_key,
-    headers={
-        "HTTP-Referer": referer,
-        "X-Title": x_title
+    model_kwargs={
+        "headers": {
+            "HTTP-Referer": referer,
+            "X-Title": x_title
+        }
     }
 )
 
