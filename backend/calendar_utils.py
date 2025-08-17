@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-CALENDAR_ID = 'ayushthakur6005@gmail.com'  
+CALENDAR_ID = '0ba8b8fb2d6d5f97bd40af24af82992ab193f6cd8742416d0e4427e2ffd38bef@group.calendar.google.com'  
 SCOPES = ['https://www.googleapis.com/auth/calendar']
 
 base64_creds = os.getenv("GOOGLE_CREDENTIALS_BASE64")
